@@ -17,7 +17,7 @@ def csvtopng(csvname,pngname=None,col=1,start=None,stop=None) :
 				if len(row) > col :
 					name = row[col]
 				continue
-			dt = datetime.datetime.strptime(row[0],"%Y-%m-%d %H:%M:%S %Z")
+			dt = datetime.datetime.strptime(row[0][0:19],"%Y-%m-%d %H:%M:%S")
 			if dt in data.keys() :
 				raise Exception("date/time '%s' duplicated" % row[0])
 			if ( start == None or dt >= start ) and ( stop == None or dt <= stop ) :
