@@ -1,1 +1,18 @@
-#print This is a test of CircleCI for GridLAB-D model development
+#include "config.glm"
+#include "output.glm"
+
+clock {
+	timezone ${TIMEZONE};
+	starttime ${STARTTIME};
+	stoptime ${STOPTIME};
+}
+
+module residential;
+
+object house {
+	name "house_1";
+	heating_setpoint "68 degF";
+	cooling_setpoint "72 degF";
+}
+
+//script on_term python3 plotcsv.py;

@@ -1,0 +1,7 @@
+module tape;
+object recorder {
+	parent "house_1";
+	property "air_temperature";
+	interval "1 h";
+	file "my_test.csv";
+}

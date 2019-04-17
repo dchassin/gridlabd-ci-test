@@ -4,9 +4,15 @@ jobs:
     docker:
       - image: gridlabd/slac-master
     steps:
-      - checkout            
+      - checkout
       - run:
-          name: Run the model
+          name: Run the simulation
           command: |
-            gridlabd --version
             gridlabd my_test.glm
+      - run:
+          name: Store results
+          command: |
+            mkdir -p /tmp/gridlabd
+            tar cvfz /tmp/gridlabd/my_test.tar.gz .
+      - store_artifacts:
+          path: /tmp/gridlabd
