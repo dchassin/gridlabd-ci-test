@@ -8,13 +8,15 @@ jobs:
       - run:
           name: Update system
           command: |
-            uname -a
-            pwd
-            ls -l
-            printenv
-            ls /usr/local/bin
-            pip3 install --upgrade pip
-            pip install matplotlib
+            apt-get install software-properties-common python-software-properties --yes
+            add-apt-repository -y ppa:deadsnakes/ppa
+            apt update
+            apt-get install python3-dev
+            apt install python3.6            
+            update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
+            update-alternatives --set python /usr/bin/python3.6
+            apt-get -y install python3-pip
+            pip3 install matplotlib
       - run:
           name: Run the simulation
           command: |
