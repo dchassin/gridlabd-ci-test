@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: gridlabd/slac-master
+    steps:
+      - checkout            
+      - run:
+          name: Run the model
+          command: |
+            gridlabd --version
+            gridlabd my_test.glm
