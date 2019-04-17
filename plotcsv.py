@@ -2,6 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import datetime
 
+start = datetime.datetime(2019,1,1,0,0,0,tzinfo=datetime.timezone(datetime.timedelta(hours=-8),"PST"))
 data = {}
 with open("my_test.csv","r") as csvfile :
 	reader = csv.reader(csvfile);
@@ -12,7 +13,8 @@ with open("my_test.csv","r") as csvfile :
 		dt = datetime.datetime.fromisoformat(ts)
 		if dt in data.keys() :
 			raise Exception("date/time '%s' duplicated" % row[0])
-		data[dt] = float(row[1])
+		if dt >= start :
+			data[dt] = float(row[1])
 
 plt.figure(1)
 plt.plot(data.keys(),data.values())
