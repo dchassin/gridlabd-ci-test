@@ -1,2 +1,0 @@
-%.csv: %.glm
-	gridlabd $(GLFLAGS0) $< $(GLFLAGS1)

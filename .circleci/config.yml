@@ -6,13 +6,13 @@ jobs:
     steps:
       - checkout            
       - run:
-          name: Run the model
+          name: Run the simulation
           command: |
-            make all
+            gridlabd my_test.glm
       - run:
           name: Store results
           command: |
             mkdir -p /tmp/gridlabd
-            tar cfvz /tmp/gridlabd/my_test.tarz .
+            cp my_test.csv /tmp/gridlabd
       - store_artifacts:
           path: /tmp/gridlabd
