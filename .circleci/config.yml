@@ -4,12 +4,15 @@ jobs:
     docker:
       - image: gridlabd/slac-master
     steps:
-      - checkout            
+      - checkout
+      - run:
+        name: Update python3
+          command: |
+            pip3 install --upgrade pip
+            pip install matplotlib
       - run:
           name: Run the simulation
           command: |
-            apt-get -y install python3-pip
-            pip3 install matplotlib
             gridlabd my_test.glm
       - run:
           name: Store results
