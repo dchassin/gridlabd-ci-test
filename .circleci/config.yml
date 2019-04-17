@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Update python3
+          name: Update python3
           command: |
             pip3 install --upgrade pip
             pip install matplotlib
