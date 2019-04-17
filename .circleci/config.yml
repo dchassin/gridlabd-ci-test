@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Run the simulation
           command: |
+            pip3 install matplotlib
             gridlabd my_test.glm
       - run:
           name: Store results
