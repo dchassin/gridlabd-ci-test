@@ -8,7 +8,8 @@ jobs:
       - run:
           name: Update system
           command: |
-            gridlabd --origin
+            pwd
+            printenv
             pip3 install --upgrade pip
             pip install matplotlib
       - run:
