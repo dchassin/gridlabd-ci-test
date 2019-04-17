@@ -13,6 +13,6 @@ jobs:
           name: Store results
           command: |
             mkdir -p /tmp/gridlabd
-            tar cvz /tmp/gridlabd/my_test.tarz .
+            tar cfvz /tmp/gridlabd/my_test.tarz .
       - store_artifacts:
           path: /tmp/gridlabd
