@@ -8,5 +8,4 @@ jobs:
       - run:
           name: Run the model
           command: |
-            gridlabd --version
-            gridlabd my_test.glm
+            make all

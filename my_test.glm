@@ -1,1 +1,20 @@
-#print This is a test of CircleCI for GridLAB-D model development
+#include "config.glm"
+
+clock {
+	timezone ${TIMEZONE};
+	starttime ${STARTTIME};
+	stoptime ${STOPTIME};
+}
+
+module residential;
+module tape;
+
+object house {
+	heating_setpoint "68 degF";
+	cooling_setpoint "72 degF";
+	object recorder {
+		property "air_temperature";
+		interval "1 h";
+		file "my_test.csv";
+	};
+}
