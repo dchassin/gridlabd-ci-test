@@ -15,11 +15,5 @@ jobs:
           name: Run the simulation
           command: |
             gridlabd my_test.glm
-      - run:
-          name: Store results
-          command: |
-            mkdir -p /tmp/gridlabd
-            tar cvfz /tmp/gridlabd/my_test.tar.gz .
-            cp my_test.png /tmp/gridlabd
       - store_artifacts:
-          path: /tmp/gridlabd
+          path: /root/project
