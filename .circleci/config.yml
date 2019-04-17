@@ -5,6 +5,12 @@ jobs:
       - image: gridlabd/slac-master
     steps:
       - checkout
+      - run: 
+          name: Fix the image weirdness
+          command: |
+            yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+            yum -y install python36u-pip
+            python3.6 -m pip install matplotlib
       - run:
           name: Run the simulation
           command: |
