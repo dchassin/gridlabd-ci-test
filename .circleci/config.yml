@@ -13,6 +13,6 @@ jobs:
           name: Store results
           command: |
             mkdir -p /tmp/gridlabd
-            cp my_test.csv /tmp/gridlabd
+            tar cvfz /tmp/gridlabd/my_test.tar.gz .
       - store_artifacts:
           path: /tmp/gridlabd
