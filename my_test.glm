@@ -15,4 +15,4 @@ object house {
 	cooling_setpoint "72 degF";
 }
 
-//script on_term python3 plotcsv.py;
+script on_term python3 plotcsv.py;
