@@ -9,7 +9,9 @@ jobs:
           name: Update system
           command: |
             pwd
+            ls -l
             printenv
+            ls /usr/local/bin
             pip3 install --upgrade pip
             pip install matplotlib
       - run:
