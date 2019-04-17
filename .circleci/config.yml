@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Update system
           command: |
+            uname -a
             pwd
             ls -l
             printenv
