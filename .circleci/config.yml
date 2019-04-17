@@ -10,6 +10,9 @@ jobs:
           command: |
             make all
       - run:
-          name: Deliver results
+          name: Store results
           command: |
-            cat my_test.csv
+            mkdir -p /tmp/gridlabd
+            tar cvz /tmp/gridlabd/my_test.tarz .
+      - store_artifacts:
+          path: /tmp/gridlabd
