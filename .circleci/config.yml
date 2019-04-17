@@ -8,6 +8,8 @@ jobs:
       - run:
           name: Run the model
           command: |
-            pwd
-            ls -l
             make all
+      - run:
+          name: Deliver results
+          command: |
+            mail -s "Test result" dchassin@slac.stanford.edu < my_test.csv
