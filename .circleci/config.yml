@@ -2,13 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gridlabd/slac-master
+      - image: gridlabd/slac-master:dev
     steps:
       - checkout
-      - run:
-          name: Update system
-          command: |
-            pip install matplotlib
       - run:
           name: Run the simulation
           command: |
