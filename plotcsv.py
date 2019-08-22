@@ -1,8 +1,8 @@
 import datetime
+import csv
+import matplotlib.pyplot as plt
 
 def csvtopng(csvname,pngname=None,col=1,start=None,stop=None) :
-	import csv
-	import matplotlib.pyplot as plt
 
 	data = {}
 	name = None
@@ -24,10 +24,10 @@ def csvtopng(csvname,pngname=None,col=1,start=None,stop=None) :
 				data[dt] = float(row[col].split(" ")[0])
 
 	plt.figure(1)
-	plt.plot(data.keys(),data.values())
+	plt.plot(data.values())
 	if name != None :
 		plt.ylabel(name.split("[")[0].replace("_"," ").title())
-	plt.xlabel("Date/Time")
+	plt.xlabel("Time")
 	plt.grid()
 	plt.savefig("my_test.png")
 
