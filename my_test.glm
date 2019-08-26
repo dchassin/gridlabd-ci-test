@@ -11,8 +11,9 @@ module residential;
 
 object house {
 	name "house_1";
+    air_temperature "72 degF";
 	heating_setpoint "68 degF";
 	cooling_setpoint "72 degF";
 }
 
-//script on_term python3 plotcsv.py;
+#on_exit 0 python3 plotcsv.py;
